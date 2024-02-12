@@ -1,0 +1,327 @@
+<div class="productos">
+    <div *ngFor="let producto of productos" class="producto">
+      <h3>{{ producto.nombre }}</h3>
+      <p>Precio: ${{ producto.precio }}</p>
+      <p>{{ producto.descripcion }}</p>
+      <div class="galeria">
+        <div *ngFor="let foto of producto.fotos" class="foto">
+          <img [src]="foto" alt="Foto del producto">
+        </div>
+      </div>
+      <button (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <!---Aquí empieza  la card  de Santiago---->
+  <section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">¿Qué hay de nuevo?</h1>
+                <p>
+                  El mundo de los vinos, licores y cervezas sigue siendo dinámico y en constante evolución, con nuevas tendencias, productos y experiencias que surgen regularmente para satisfacer los gustos cambiantes de nuestros clientes.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="#">
+                        <img src="assets/images/food2.png"  class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                            </li>
+                            <li class="text-muted text-right">$36.000</li>
+                        </ul>
+                        <a href="#" class="h2 text-decoration-none text-dark">La Crema Pinot Noir Monterey</a>
+                        <p class="card-text">
+                          es un vino tinto elegante y equilibrado, elaborado con uvas Pinot Noir cultivadas en la región de Monterey, California.
+                        </p>
+                        <p class="text-muted">Reseñas (24)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="#">
+                        <img src="assets/images/food3.png" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                            </li>
+                            <li class="text-muted text-right">$48.000</li>
+                        </ul>
+                        <a href="#" class="h2 text-decoration-none text-dark">Jack Daniels Single Barrel</a>
+                        <p class="card-text">
+                          es una expresión premium de la famosa destilería estadounidense. Se trata de un whisky bourbon elaborado a partir de una cuidadosa selección de barriles individuales.
+                        </p>
+                        <p class="text-muted">Reseñas (48)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="#">
+                        <img src="assets/images/food4.png" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                            </li>
+                            <li class="text-muted text-right">$24.000</li>
+                        </ul>
+                        <a href="#" class="h2 text-decoration-none text-dark">Corona Extra Beer</a>
+                        <p class="card-text">
+                          Corona Extra ofrece notas sutiles de malta con un toque refrescante de lúpulo y un ligero amargor en el final. Es conocida por su aroma fresco y limpio, con matices de maíz y cereales. 
+                        </p>
+                        <p class="text-muted">Reseñas (74)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ 
+      <div class="p-5" style="background-color: #DBDBDB">
+        <div style="text-align: center;">
+          <h1 [style.color]="propertyBinding">{{titulo5}}</h1>
+        </div>
+        <div class="row mx-auto" style="max-width: 980px;">
+            <aside class="col-lg-6">
+                <!-- modal 1 -->
+                <div class="modal" tabindex="-1" style="display: block; position: static;">
+                    <div class="modal-dialog">
+                        <div class="modal-content shadow">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Tu dirección</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" fdprocessedid=""></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row g-2 mb-3">
+                                        <div class="col-lg-auto col-12">
+                                            <button class="btn btn-light" fdprocessedid="">
+                                                <i class="fa fa-map-marker"></i> Encuentra mi Ubicación </button>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="O Escríbe tu dirección" aria-label="O Escríbe tu dirección" fdprocessedid="">
+                                        </div>
+                                        <div class="col-3">
+                                            <button class="btn btn-primary" fdprocessedid=""> Confirmar </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <article class="rounded" style="background:#ccc; height:200px; overflow: hidden;">
+                                    <img src="assets/images/map.jpg" class="img-fluid">
+                                </article>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </aside>
+            <aside class="col-lg-6">
+                
+                <div class="modal" tabindex="-1" style="display: block; position: static;">
+                    <div class="modal-dialog">
+                        <div class="modal-content shadow">
+                            <div class="modal-body">
+                                <div class="itemside mb-3">
+                                    <div class="aside">
+                                        <img class="rounded img-md" width="400" height="250" src="assets/images/food1.png">
+                                    </div>
+                                    <div class="info">
+                                      <h2 class="title main-header">Vinos, Licores y Cervezas</h2>
+                                        <p>Puedes agregar a tu orden boquitas.</p>
+                                    </div>
+                                </div>
+                        
+                                <hr>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <b class="text-dark">Precio: $29.900</b>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="input-group" style="max-width:200px">
+                                            <button class="btn btn-icon btn-light" type="button" fdprocessedid="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#999" viewBox="0 0 24 24">
+                                                    <path d="M19 13H5v-2h14v2z"></path>
+                                                </svg>
+                                            </button>
+                                            <input class="form-control text-center" readonly="" placeholder="" value="14" fdprocessedid="">
+                                            <button class="btn btn-icon btn-light" type="button" fdprocessedid="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#999" viewBox="0 0 24 24">
+                                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <!-- input-group.// -->
+                                    </div>
+                                    <!-- col.// -->
+                                </div>
+                                <!-- row.// -->
+                                <hr>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="">
+                                            <span class="form-check-label"> Agregar carne de cerdo </span>
+                                        </label>
+                                    </div>
+                                    <!-- col.// -->
+                                    <div class="col-lg-6">
+                                        <label class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="">
+                                            <span class="form-check-label"> Agregar carne de pollo</span>
+                                        </label>
+                                    </div>
+                                    <!-- col.// -->
+                                    <div class="col-lg-6">
+                                        <label class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="">
+                                            <span class="form-check-label"> Agregar carne de res </span>
+                                        </label>
+                                    </div>
+                                    <!-- col.// -->
+                                    <div class="col-lg-6">
+                                        <label class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="">
+                                            <span class="form-check-label"> Agregar cevique de camarón </span>
+                                        </label>
+                                    </div>
+                                    <!-- col.// -->
+                                </div>
+                                <!-- row.// -->
+                            </div>
+                            <!-- modal-body.// -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal" fdprocessedid="">Cerrar</button>
+                                <button type="button" class="btn btn-primary" fdprocessedid="">Guardar Cambios</button>
+                            </div>
+                            <!-- modal-footer.// -->
+                        </div>
+                        <!-- modal-content.// -->
+                    </div>
+                    <!-- modal-dialog.// -->
+                </div>
+                <!-- modal 1.// -->
+            </aside>
+        </div>
+        <!-- row .// -->
+  
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+      
+                <div class="col-md-4 pt-5">
+                  <h2 class="h2 text-success border-bottom pb-3 border-light logo" style="color: darkgreen;">BEER CORNER</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                           EL SALVADOR
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="#">503 7449 4979</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="#">beercorner&commat;gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+      
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Vinos</a></li>
+                        <li><a class="text-decoration-none" href="#">Licores</a></li>
+                        <li><a class="text-decoration-none" href="#">Cervezas</a></li>
+                        <li><a class="text-decoration-none" href="#">Bebidas energizantes</a></li>
+                        <li><a class="text-decoration-none" href="#">Gorras y Camisetas</a></li>
+                        <li><a class="text-decoration-none" href="#">Influencers</a></li>
+                        
+                    </ul>
+                </div>
+      
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Más Información</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Trabaja con Nosotros</a></li>
+                        <li><a class="text-decoration-none" href="#">Centro de Ayuda</a></li>
+                        <li><a class="text-decoration-none" href="#">Quejas y Reclamos</a></li>
+                        <li><a class="text-decoration-none" href="#">Ubicación</a></li>
+                        <li><a class="text-decoration-none" href="#">Contacto directo</a></li>
+                    </ul>
+                </div>
+      
+            </div>
+      
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fa fa-facebook-f"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fa fa-linkedin-square"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Correo Electrónico</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Suscríbete para recibir promociones</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2024 Beer Corner
+                            | Designed by <a rel="sponsored" href="#" target="_blank">The Beer Corner</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+      </footer>
+      <!-- End Footer -->

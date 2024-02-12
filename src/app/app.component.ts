@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ngular_enrutamiento-servicio';
+  title = 'angular_enrutamiento-servicio';
 }

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-body-primary" style="background-color: #201f1f;">
+    <div class="container-fluid">
+      <a class="navbar-brand mx-auto mb-2 mb-lg-0" routerLink="">
+      </a>
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-light" routerLink="">INICIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" type="submit" routerLink="/vinos">VINOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" routerLink="/licores">LICORES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light " routerLink="/cervezas">CERVEZAS</a>
+                </li>     
+            </ul>
+            <a class="navbar-brand mx-auto mb-2 mb-lg-0" routerLink="">
+                <img src="assets/img/im2.png" alt="" width="105" height="60">
+            </a>
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0  social-icons">
+                <button type="button" class="btn btn-success" (click)="ocultarBarra()">HORARIO</button>
+              <hr /><ul class="list-group" *ngIf="!ocultar">
+                <li *ngFor="let item of items" class="list-group-item"[routerLink]="[item.hora]"
+                routerLinkActive="active" (click)="ocultarBarra()">
+                <p>{{ item.dia }}:{{ item.hora }}</p></li>
+              </ul>
+                <li><a class="active" routerLink="#"><i class="lni lni-home"></i></a></li>
+                <li><a routerLink="#" (click)="mostrarFormularioInscripcion = !mostrarFormularioInscripcion"><i class="lni lni-user"></i></a></li>
+                <li><a routerLink="#"><i class="lni lni-cart"></i> {{ cantidadEnCarrito }}</a></li>
+              </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <!-- Formulario de inscripción -->
+  <div *ngIf="mostrarFormularioInscripcion" class="form-container">
+    <h1 [style.color]="propertyBinding">{{titulo}}</h1>
+    <form (submit)="inscribirUsuario()">
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoUsuario.nombre" autocomplete="off" placeholder="Nombre" required>
+      <input type="text" id="email" name="email" [(ngModel)]="nuevoUsuario.email" autocomplete="off" placeholder="Email" required>
+      <input type="password" id="password" name="password" [(ngModel)]="nuevoUsuario.password" autocomplete="off" placeholder="Contraseña" required>
+      <button type="submit">Inscribirse</button>
+    </form>
+  </div>
+  
