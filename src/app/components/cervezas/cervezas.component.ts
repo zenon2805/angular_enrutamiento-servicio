@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CarritoService } from '../../carrito.service';
+
 
 interface MenuItem {
   name: string;
@@ -83,11 +85,14 @@ export class CervezasComponent {
 
   
 
+
+  constructor(private carritoService: CarritoService) {}
+
   carrito: any[] = [];
 
   agregarAlCarrito(producto: any) {
     this.carrito.push(producto);
     console.log("Producto agregado al carrito:", producto);
-  }  
+  }
 
 }
